@@ -40,7 +40,7 @@ class NavBar extends Component {
                                 </IconButton>
                                 <Typography className={classes.title} variant="h6" color="inherit">
                                     AppTitle {value.language}
-                        </Typography>
+                                </Typography>
                                 <Switch onChange={toggleTheme} />
                                 <div className={classes.grow} />
                                 <div className={classes.search}>

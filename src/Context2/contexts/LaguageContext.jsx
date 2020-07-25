@@ -8,18 +8,25 @@ export class LanguageProvider extends Component{
         this.state = {
             language : "english"
         }
-        this.chgangeLanguage = this.chgangeLanguage.bind(this)
+        // this.chgangeLanguage = this.chgangeLanguage.bind(this)
     }
 
-    chgangeLanguage (e) {
-        this.setState({
-            language : e.target.value
-        })
-    }
+    // chgangeLanguage (e) {
+    //     this.setState({
+    //         language : e.target.value
+    //     })
+    // }
 
     render(){
+        const chgangeLanguage = (e) => {
+            this.setState({
+                language : e.target.value
+            })
+        }
+
         return(
-            <LaguageContext.Provider value = {{...this.state , chgangeLanguage : this.chgangeLanguage}}>
+            // <LaguageContext.Provider value = {{...this.state , chgangeLanguage : this.chgangeLanguage}}>
+            <LaguageContext.Provider value = {{...this.state , chgangeLanguage}}>
                 {this.props.children}
             </LaguageContext.Provider>
         )

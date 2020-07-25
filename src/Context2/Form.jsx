@@ -8,13 +8,22 @@ import {LaguageContext} from "./contexts/LaguageContext"
 
 const word = {
     english : {
-        email : "Email"
-    },
+        email : "Email",
+        password : "Password",
+        rememberme: "Remember me",
+        signIn : "sign in"
+    },  
     french : {
-        email : "Adresse Electronique"
+        email : "Adresse Electronique",
+        password : "Mot de Passe",
+        rememberme: "Soviens-toi De Moi",
+        signIn : "Se Connecter"
     },
     spanish : {
-        email : "Correo Electeronico"
+        email : "Correo Electeronico",
+        password : "Contrasena",
+        rememberme: "Recuerdame",
+        signIn : "Registrarse"
     }
 }
 
@@ -23,7 +32,7 @@ class Form extends Component {
     render() {
         const { classes } = this.props
         const {language , chgangeLanguage} = this.context
-        const {email} = word[language]
+        const laguage = word[language]
         return (
             <main className={classes.main}>
                 <Paper className={classes.paper} >
@@ -38,16 +47,16 @@ class Form extends Component {
                     </Select>
                     <form className={classes.form}>
                         <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="Email">{email}</InputLabel>
+                            <InputLabel htmlFor="Email">{laguage.email}</InputLabel>
                             <Input id="Email" name="Email" autoFocus />
                         </FormControl>
                         <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="Password">Password</InputLabel>
-                            <Input id="Password" name="Password" autoFocus />
+                            <InputLabel htmlFor="password">{laguage.password}</InputLabel>
+                            <Input id="password" name="password" autoFocus />
                         </FormControl>
                         <FormControlLabel
                             control={<Checkbox color="primary" />}
-                            label="Remember me"
+                            label={laguage.rememberme}
                         />
                         <Button
                             variant="contained"
@@ -56,7 +65,7 @@ class Form extends Component {
                             color="primary"
                             className={classes.submit}
                         >
-                            Sign In
+                            {laguage.signIn}
                         </Button>
                     </form>
                 </Paper>
